@@ -134,7 +134,7 @@ def run_training():
         print("step %d start" %step)
         start_time = time.time()
         rgb_train_images, flow_train_images, train_labels, _, _, _ = input_data.read_clip_and_label(
-                      filename='../../list/ucfcrime_list/train.list',
+                      filename='/content/i3dkin/list/ucfcrime_list/train.list',
                       batch_size=FLAGS.batch_size * gpu_num,
                       num_frames_per_clip=FLAGS.num_frame_per_clib,
                       crop_size=FLAGS.crop_size,
@@ -163,7 +163,7 @@ def run_training():
             train_writer.add_summary(summary, step)
             print('Validation Data Eval:')
             rgb_val_images, flow_val_images, val_labels, _, _, _ = input_data.read_clip_and_label(
-                            filename='../../list/ucfcrime_list/test.list',
+                            filename='/content/i3dkin/list/ucfcrime_list/test.list',
                             batch_size=FLAGS.batch_size * gpu_num,
                             num_frames_per_clip=FLAGS.num_frame_per_clib,
                             crop_size=FLAGS.crop_size,
