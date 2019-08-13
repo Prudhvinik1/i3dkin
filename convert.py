@@ -2,6 +2,8 @@ import cv2
 import math
 import scipy.misc
 import os, sys
+import imageio
+#imageio.imwrite('filename.jpg', array)
 
 data_root='/content/'
 videos_root =os.path.join(data_root,'Anomaly-Videos-Part-2')
@@ -75,7 +77,8 @@ def extract_splits(split):
                 if (frameId % math.floor(fps) == 0):
                     save_img=os.path.join(images_root,file_dir[:-4],'i','%d.jpg'%num)
                     num+=1
-                    scipy.misc.imsave(save_img,frame)
+                    imageio.imwrite(save_img,frame)
+                    #scipy.misc.imsave(save_img,frame)
             #filename ="test%d.jpg" % count;count+=1
             #cv2.imwrite(filename, frame)
             cap1.release()
@@ -107,7 +110,8 @@ def extract_splits(split):
                 if (frameId % math.floor(fps) == 0):
                     save_img=os.path.join(images_root,file_dir[:-4],'i','%d.jpg'%num)
                     num+=1
-                    scipy.misc.imsave(save_img,frame)
+                    imageio.imwrite(save_img,frame)
+                    #scipy.misc.imsave(save_img,frame)
                     #filename ="test%d.jpg" % count;count+=1
                     #cv2.imwrite(filename, frame)
 
@@ -143,7 +147,8 @@ def extract_all():
                     if (frameId % math.floor(fps) == 0):
                         save_img=os.path.join(images_root,file_dir[:-4],'i','%d.jpg'%num)
                         num+=1
-                        scipy.misc.imsave(save_img,frame)
+                        imageio.imwrite(save_img,frame)
+                        #scipy.misc.imsave(save_img,frame)
                         #filename ="test%d.jpg" % count;count+=1
                         #cv2.imwrite(filename, frame)
 
