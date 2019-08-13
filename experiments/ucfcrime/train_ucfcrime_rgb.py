@@ -17,12 +17,12 @@
 # pylint: disable=missing-docstring
 import os
 import sys
-sys.path.append('../../')
+sys.path.append('../..')
 import time
 import numpy
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
-from ../../ import input_data
+import input_data
 import math
 import numpy as np
 from i3d import InceptionI3d
@@ -43,9 +43,9 @@ flags.DEFINE_integer('classics', 14, 'The num of class')
 FLAGS = flags.FLAGS
 model_save_dir = './models/rgb_scratch_10000_6_64_0.0001_decay'
 
-#os.environ["CUDA_VISIBLE_DEVICES"] = "4"
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-if tf.test.gpu_device_name():
+os.environ["CUDA_VISIBLE_DEVICES"] = "4"
+#os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+if tf.test.gpu_device_name:
     print('GPU found')
 else:
     print("No GPU found")
@@ -58,7 +58,7 @@ def run_training():
     # Create model directory
     if not os.path.exists(model_save_dir):
         os.makedirs(model_save_dir)
-    rgb_pre_model_save_dir = "../../checkpoints/rgb_scratch"
+    rgb_pre_model_save_dir = "/content/i3dkin/checkpoints/rgb_scratch"
 
     with tf.Graph().as_default():
         global_step = tf.get_variable(
