@@ -22,7 +22,7 @@ import time
 import numpy
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
-import input_data
+from ../.. import input_data
 import math
 import numpy as np
 from i3d import InceptionI3d
