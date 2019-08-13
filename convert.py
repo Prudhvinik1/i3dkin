@@ -7,7 +7,7 @@ data_root='/content/'
 videos_root =os.path.join(data_root,'Anomaly-Videos-Part-2')
 images_root=os.path.join(data_root,'images')
 
-def make_list():
+def make_list(split):
     start=True
     with open('/content/i3dkin/list/ucfcrime_list/train.list', "w") as f:
         sp=open(os.path.join(data_root,'Action_Regnition_splits','train_00%d.txt'%split))
@@ -45,7 +45,7 @@ def make_list():
 
 
 
-def extract_splits():
+def extract_splits(split):
     trfile=open(os.path.join(data_root,'Action_Regnition_splits','train_00%d.txt'%split))
     for line in trfile.readlines():
         
@@ -160,8 +160,8 @@ def extract_all():
     video_list.sort()
     return video_list,len(video_list)'''
 
-extract_splits()
-make_list()
+extract_splits(1)
+make_list(1)
 #extract_all()
 #vl, l=get_video_list()
 #print("vl= ",vl)
