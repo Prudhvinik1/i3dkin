@@ -17,7 +17,7 @@
 # pylint: disable=missing-docstring
 import os
 import sys
-sys.path.append('../../')
+sys.path.append('../../../')
 import time
 import numpy
 from six.moves import xrange  # pylint: disable=redefined-builtin
