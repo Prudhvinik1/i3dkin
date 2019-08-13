@@ -175,7 +175,9 @@ def data_process(tmp_data, crop_size):
     return img_datas
 
 def read_clip_and_label(filename, batch_size, start_pos=-1, num_frames_per_clip=30, sample_rate=1, crop_size=224, shuffle=True, add_flow=False):
+    filename = '/content/i3dkin/list/ucfcrime_list/train.list'
     lines = open(filename, 'r')
+    print("opening",lines)
     read_dirnames = []
     rgb_data = []
     flow_data = []
