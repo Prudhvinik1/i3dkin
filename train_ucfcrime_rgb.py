@@ -59,7 +59,7 @@ def run_training():
     # Create model directory
     if not os.path.exists(model_save_dir):
         os.makedirs(model_save_dir)
-    rgb_pre_model_save_dir = "/content/i3dkin/checkpoints/rgb_scratch"
+    rgb_pre_model_save_dir = "/content/drive/My Drive/i3d_ucf/checkpoints/rgb_scratch"
 
     with tf.Graph().as_default():
         global_step = tf.get_variable(
@@ -178,7 +178,7 @@ def run_training():
                                       })
             print("accuracy: " + "{:.5f}".format(acc))
             test_writer.add_summary(summary, step)
-        if (step+1) % 3000 == 0 or (step + 1) == FLAGS.max_steps:
+        if (step+1) % 100 == 0 or (step + 1) == FLAGS.max_steps:
             saver.save(sess, os.path.join(model_save_dir, 'i3d_ucfcrime_model'), global_step=step)
     print("done")
 
