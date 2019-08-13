@@ -3,13 +3,13 @@ import math
 import scipy.misc
 import os, sys
 
-data_root='/users/becky/documents/cmpe295/UCF_Crimes'
-videos_root =os.path.join(data_root,'Videos')
+data_root='/content/'
+videos_root =os.path.join(data_root,'Anomaly-Videos-Part-2')
 images_root=os.path.join(data_root,'images')
 
 def make_list(split):
     start=True
-    with open('/users/becky/documents/cmpe295/i3dkin/list/ucfcrime_list/train.list', "w") as f:
+    with open('/content/i3dkin/list/ucfcrime_list/train.list', "w") as f:
         sp=open(os.path.join(data_root,'Action_Regnition_splits','train_00%d.txt'%split))
         labels=open(os.path.join(data_root,'Action_Regnition_splits','ClassIDs.txt'))
         labarr=[]
@@ -26,7 +26,7 @@ def make_list(split):
             f.write(os.path.join(images_root,file_dir[:-4])+" %d"%labind)
         f.close()
         start=True
-    with open('/users/becky/documents/cmpe295/i3dkin/list/ucfcrime_list/test.list', "w") as f:
+    with open('/content/i3dkin/list/ucfcrime_list/test.list', "w") as f:
         sp=open(os.path.join(data_root,'Action_Regnition_splits','test_00%d.txt'%split))
         labels=open(os.path.join(data_root,'Action_Regnition_splits','ClassIDs.txt'))
         labarr=[]
