@@ -42,7 +42,7 @@ flags.DEFINE_integer('rgb_channels', 3, 'RGB_channels for input')
 flags.DEFINE_integer('flow_channels', 2, 'FLOW_channels for input')
 flags.DEFINE_integer('classics', 14, 'The num of class')
 FLAGS = flags.FLAGS
-model_save_dir = './models/rgb_scratch_10000_6_64_0.0001_decay'
+model_save_dir = '/content/drive/My Drive/i3d_ucf/checkpoints/rgb_scratch'
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "4"
 #os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
